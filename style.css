@@ -1,47 +1,71 @@
-/* 1. شريط التهنئة المتحرك */
+/* 1. تخصيص أوسمة الأقسام التلقائية (العروض والأكثر طلباً) */
+.product-label, .badge, .hot-label, .sale-label {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    padding: 4px 12px !important;
+    border-radius: 50px !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    z-index: 5 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+/* لون خاص لقسم "العروض" (بيج داكن بخط كريمي) */
+.sale-label, [class*="sale"] {
+    background-color: #8d7b68 !important; /* بني ملكي */
+    color: #ffffff !important;
+}
+
+/* لون خاص لقسم "الأكثر طلباً" (بني محروق بخط كريمي) */
+.hot-label, [class*="best-seller"], [class*="hot"] {
+    background-color: #4e342e !important; /* بني داكن */
+    color: #ffffff !important;
+}
+
+/* 2. تنظيم عرض "بلوكات" الصفحة الرئيسية لتبدو كأقسام منفصلة */
+.home-section-title {
+    text-align: center !important;
+    margin: 40px 0 20px !important;
+    color: #4e342e !important; /* بني محروق وواضح */
+    font-size: 22px !important;
+    font-weight: bold !important;
+    position: relative;
+}
+
+.home-section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e1d6c8; /* بيج خفيف */
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* 3. شريط الإعلان المتحرك (التأكد من استمرار الحركة) */
 body::before {
-    content: "✨ ترقبوا الانطلاقة الكبرى بعد عيد الفطر المبارك.. توفير كافة المنتجات بأصنافها وأنواعها قريباً.. وكل عام وأنتم بخير ✨";
+    content: "✨ انتظرونا بعد العيد.. سوف نجمع لكم كل احتياجاتكم في شوق ستور ✨";
     display: block !important;
-    background-color: #8c7662 !important;
-    color: #f9f6f2 !important;
-    text-align: center;
-    padding: 15px 0;
-    font-weight: bold;
-    font-size: 18px;
-    width: 100% !important;
-    position: relative !important;
-    z-index: 99999 !important;
-    border-bottom: 3px solid #b58d88;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: move_text 20s linear infinite !important;
-}
-
-@keyframes move_text {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-/* 2. كود الدوائر الجديد والمجرب لثيم الباهر */
-.category-item a div, 
-.category-item .icon-wrapper, 
-.category-item img, 
-.category-item .icon {
-    border-radius: 50% !important;
-    width: 110px !important;
-    height: 110px !important;
-    background-color: #ffffff !important;
-    border: 3px solid #b58d88 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 auto 10px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    background: #f5f0e6 !important;
+    color: #4e342e !important;
+    text-align: center !important;
+    padding: 12px 0 !important;
+    font-weight: bold !important;
+    white-space: nowrap !important;
     overflow: hidden !important;
+    animation: shooq-marquee 20s linear infinite !important;
 }
 
-/* تكبير الأيقونة بالداخل */
-.category-item i, .category-item svg {
-    font-size: 40px !important;
-    color: #8c7662 !important;
+@keyframes shooq-marquee {
+    0% { text-indent: 100%; }
+    100% { text-indent: -120%; }
+}
+
+/* 4. حاسبة تمارا - تنسيق تلقائي تحت كل منتج في الأقسام */
+.tamara-product-widget {
+    margin: 8px auto !important;
+    font-size: 11px !important;
+    border-top: 1px solid #f5f0e6 !important;
+    padding-top: 5px !important;
 }
