@@ -1,4 +1,4 @@
-/* 1. شريط التهنئة المتحرك - ثيم الباهر */
+/* 1. شريط التهنئة المتحرك */
 body::before {
     content: "✨ ترقبوا الانطلاقة الكبرى بعد عيد الفطر المبارك.. توفير كافة المنتجات بأصنافها وأنواعها قريباً.. وكل عام وأنتم بخير ✨";
     display: block !important;
@@ -17,32 +17,31 @@ body::before {
     animation: move_text 20s linear infinite !important;
 }
 
-/* تعريف حركة النص */
 @keyframes move_text {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
 
-/* 2. تحويل أيقونات الأقسام (الشنط) إلى دوائر */
-.category-item .category-icon-wrapper,
-.category-item .icon,
-.category-item img,
-[class*="category"] i {
+/* 2. كود الدوائر الجديد والمجرب لثيم الباهر */
+.category-item a div, 
+.category-item .icon-wrapper, 
+.category-item img, 
+.category-item .icon {
     border-radius: 50% !important;
     width: 110px !important;
     height: 110px !important;
     background-color: #ffffff !important;
-    border: 2px solid #b58d88 !important;
+    border: 3px solid #b58d88 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     margin: 0 auto 10px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
     overflow: hidden !important;
 }
 
-/* تنسيق الأيقونات الداخلية */
+/* تكبير الأيقونة بالداخل */
 .category-item i, .category-item svg {
-    font-size: 30px !important;
+    font-size: 40px !important;
     color: #8c7662 !important;
 }
