@@ -1,44 +1,48 @@
-/* 1. إنشاء شريط متحرك في أعلى المتجر تماماً */
+/* 1. شريط التهنئة المتحرك - ثيم الباهر */
 body::before {
     content: "✨ ترقبوا الانطلاقة الكبرى بعد عيد الفطر المبارك.. توفير كافة المنتجات بأصنافها وأنواعها قريباً.. وكل عام وأنتم بخير ✨";
-    display: block;
-    background-color: #8c7662 !important; /* لون كاكاو */
-    color: #f9f6f2 !important; /* نص كريمي */
+    display: block !important;
+    background-color: #8c7662 !important;
+    color: #f9f6f2 !important;
     text-align: center;
-    padding: 15px;
+    padding: 15px 0;
     font-weight: bold;
     font-size: 18px;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 99999 !important;
     border-bottom: 3px solid #b58d88;
-    position: relative;
-    z-index: 9999;
-    width: 100%;
-    white-space: nowrap;
     overflow: hidden;
-    box-sizing: border-box;
-    /* إضافة تأثير الحركة */
-    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+    animation: move_text 20s linear infinite !important;
 }
 
-/* تحريك النص */
-@keyframes marquee {
-    0% { text-indent: 100%; }
-    100% { text-indent: -100%; }
+/* تعريف حركة النص */
+@keyframes move_text {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
-/* 2. تنسيق الدوائر ليكون التصميم خرافي */
-.category-item img, 
-.section-icon, 
-[class*="category"] img,
-.f-cat-img {
+/* 2. تحويل أيقونات الأقسام (الشنط) إلى دوائر */
+.category-item .category-icon-wrapper,
+.category-item .icon,
+.category-item img,
+[class*="category"] i {
     border-radius: 50% !important;
-    width: 140px !important; 
-    height: 140px !important;
-    object-fit: cover !important;
-    border: 3px solid #b58d88 !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 110px !important;
+    height: 110px !important;
+    background-color: #ffffff !important;
+    border: 2px solid #b58d88 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 10px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    overflow: hidden !important;
 }
 
-/* 3. ألوان المتجر الموحدة */
-body {
-    background-color: #f9f6f2 !important;
+/* تنسيق الأيقونات الداخلية */
+.category-item i, .category-item svg {
+    font-size: 30px !important;
+    color: #8c7662 !important;
 }
