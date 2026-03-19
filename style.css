@@ -1,19 +1,31 @@
-/* --- 1. شريط الانطلاقة الكبرى (مدمج) --- */
+/* 1. إنشاء شريط متحرك في أعلى المتجر تماماً */
 body::before {
     content: "✨ ترقبوا الانطلاقة الكبرى بعد عيد الفطر المبارك.. توفير كافة المنتجات بأصنافها وأنواعها قريباً.. وكل عام وأنتم بخير ✨";
     display: block;
-    background-color: #8c7662; /* لون كاكاو دافئ */
-    color: #f9f6f2; /* نص كريمي */
+    background-color: #8c7662 !important; /* لون كاكاو */
+    color: #f9f6f2 !important; /* نص كريمي */
     text-align: center;
-    padding: 12px;
+    padding: 15px;
     font-weight: bold;
-    font-size: 16px;
-    border-bottom: 2px solid #b58d88;
+    font-size: 18px;
+    border-bottom: 3px solid #b58d88;
+    position: relative;
+    z-index: 9999;
     width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
     box-sizing: border-box;
+    /* إضافة تأثير الحركة */
+    animation: marquee 15s linear infinite;
 }
 
-/* --- 2. إجبار صور الأقسام على الشكل الدائري الخرافي --- */
+/* تحريك النص */
+@keyframes marquee {
+    0% { text-indent: 100%; }
+    100% { text-indent: -100%; }
+}
+
+/* 2. تنسيق الدوائر ليكون التصميم خرافي */
 .category-item img, 
 .section-icon, 
 [class*="category"] img,
@@ -24,15 +36,9 @@ body::before {
     object-fit: cover !important;
     border: 3px solid #b58d88 !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
-.category-item img:hover {
-    transform: scale(1.05); /* تأثير تكبير بسيط عند اللمس */
-}
-
-/* --- 3. تنسيق ألوان المتجر العامة --- */
+/* 3. ألوان المتجر الموحدة */
 body {
-    background-color: #f9f6f2;
-    color: #4a443f;
+    background-color: #f9f6f2 !important;
 }
