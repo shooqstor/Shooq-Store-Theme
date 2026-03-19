@@ -1,0 +1,1 @@
+# Shooq-Store-Theme
