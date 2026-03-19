@@ -1,32 +1,20 @@
-/* تنسيق الألوان المتناسقة الجديدة لمتجر شوق */
+/* تنسيق الألوان المتناسقة الجديدة لمتجر شوق - ستايل النيود الهادئ */
 body {
-    background-color: #f8f7f2; /* بيج فاتح جداً مريح للعين */
-    color: #2d3436; /* رمادي غامق جداً للنصوص لجعلها واضحة */
+    background-color: #f9f6f2; /* بيج كريمي ناعم جداً */
+    color: #4a443f; /* بني موكا غامق للنصوص لجعلها واضحة */
     font-family: 'Arial', sans-serif;
-    line-height: 1.7;
 }
 
-/* لون العناوين والروابط - زيتي مطفي راقي */
+/* العناوين والروابط - لون كاكاو دافئ */
 h1, h2, h3, a {
-    color: #4a5d4e; 
+    color: #8c7662; 
     text-decoration: none;
-    transition: 0.3s;
 }
 
-/* تأثير عند تمرير الماوس على الروابط */
-a:hover {
-    color: #8fa38d; /* أخضر فاتح هادئ */
-}
-
-/* خط فاصل بسيط وأنيق */
-.header-top {
-    border-bottom: 1px solid #e0ddd5;
-}
-
-/* لون الأزرار - كاكاو فاتح */
+/* لون الأزرار - وردي ترابي (Dusty Rose) */
 .button {
-    background-color: #a68b7c;
+    background-color: #b58d88;
     color: white;
-    border-radius: 8px;
-    padding: 10px 20px;
+    border-radius: 10px;
+    padding: 12px 24px;
 }
