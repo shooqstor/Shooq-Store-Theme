@@ -1,32 +1,38 @@
-/* --- إضافة الشريط المتحرك لمتجر شوق --- */
-.announcement-bar {
-    background-color: #8c7662; /* لون كاكاو دافئ للخلفية */
-    color: #f9f6f2; /* نص كريمي فاتح */
-    padding: 10px 0;
-    font-size: 16px;
-    font-weight: bold;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 2px solid #b58d88;
-}
-
-.announcement-bar marquee {
+/* --- 1. شريط الانطلاقة الكبرى (مدمج) --- */
+body::before {
+    content: "✨ ترقبوا الانطلاقة الكبرى بعد عيد الفطر المبارك.. توفير كافة المنتجات بأصنافها وأنواعها قريباً.. وكل عام وأنتم بخير ✨";
     display: block;
+    background-color: #8c7662; /* لون كاكاو دافئ */
+    color: #f9f6f2; /* نص كريمي */
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid #b58d88;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* --- بقية التنسيقات السابقة للتأكد من التناسق --- */
+/* --- 2. إجبار صور الأقسام على الشكل الدائري الخرافي --- */
+.category-item img, 
+.section-icon, 
+[class*="category"] img,
+.f-cat-img {
+    border-radius: 50% !important;
+    width: 140px !important; 
+    height: 140px !important;
+    object-fit: cover !important;
+    border: 3px solid #b58d88 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-item img:hover {
+    transform: scale(1.05); /* تأثير تكبير بسيط عند اللمس */
+}
+
+/* --- 3. تنسيق ألوان المتجر العامة --- */
 body {
     background-color: #f9f6f2;
     color: #4a443f;
-    font-family: 'Arial', sans-serif;
-}
-
-h1, h2, h3 {
-    color: #8c7662;
-}
-
-.button {
-    background-color: #b58d88;
-    color: white;
-    border-radius: 12px;
 }
