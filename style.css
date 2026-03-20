@@ -1,71 +1,52 @@
-/* 1. تخصيص أوسمة الأقسام التلقائية (العروض والأكثر طلباً) */
-.product-label, .badge, .hot-label, .sale-label {
-    position: absolute !important;
-    top: 10px !important;
-    right: 10px !important;
-    padding: 4px 12px !important;
-    border-radius: 50px !important;
-    font-size: 11px !important;
-    font-weight: bold !important;
-    z-index: 5 !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+/* 1. ألوان الهيدر والفوتر (كريمي ملكي مريح) */
+header, .navbar, footer, .footer, section.footer {
+    background-color: #fdfaf5 !important;
+    border-bottom: 1px solid #e8dfd5 !important;
+    border-top: 1px solid #e8dfd5 !important;
 }
 
-/* لون خاص لقسم "العروض" (بيج داكن بخط كريمي) */
-.sale-label, [class*="sale"] {
-    background-color: #8d7b68 !important; /* بني ملكي */
-    color: #ffffff !important;
-}
-
-/* لون خاص لقسم "الأكثر طلباً" (بني محروق بخط كريمي) */
-.hot-label, [class*="best-seller"], [class*="hot"] {
-    background-color: #4e342e !important; /* بني داكن */
-    color: #ffffff !important;
-}
-
-/* 2. تنظيم عرض "بلوكات" الصفحة الرئيسية لتبدو كأقسام منفصلة */
-.home-section-title {
-    text-align: center !important;
-    margin: 40px 0 20px !important;
-    color: #4e342e !important; /* بني محروق وواضح */
-    font-size: 22px !important;
-    font-weight: bold !important;
-    position: relative;
-}
-
-.home-section-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #e1d6c8; /* بيج خفيف */
-    margin: 10px auto;
-    border-radius: 2px;
-}
-
-/* 3. شريط الإعلان المتحرك (التأكد من استمرار الحركة) */
+/* 2. الشريط الإعلاني المتحرك (بني موكا جذاب) */
 body::before {
-    content: "✨ انتظرونا بعد العيد.. سوف نجمع لكم كل احتياجاتكم في شوق ستور ✨";
+    content: "✨ ترقبوا الإفتتاح الرسمي لـ شوق ستور بعد العيد.. كُل عام وأنتم بخير ✨";
     display: block !important;
-    background: #f5f0e6 !important;
-    color: #4e342e !important;
+    background-color: #8b6c4b !important;
+    color: #fdfaf5 !important;
     text-align: center !important;
-    padding: 12px 0 !important;
+    padding: 14px 0 !important;
     font-weight: bold !important;
     white-space: nowrap !important;
     overflow: hidden !important;
-    animation: shooq-marquee 20s linear infinite !important;
+    animation: shooq-move 20s linear infinite !important;
 }
 
-@keyframes shooq-marquee {
+@keyframes shooq-move {
     0% { text-indent: 100%; }
-    100% { text-indent: -120%; }
+    100% { text-indent: -180%; }
 }
 
-/* 4. حاسبة تمارا - تنسيق تلقائي تحت كل منتج في الأقسام */
-.tamara-product-widget {
-    margin: 8px auto !important;
-    font-size: 11px !important;
-    border-top: 1px solid #f5f0e6 !important;
-    padding-top: 5px !important;
+/* 3. دمج شعار المتجر وتنظيفه */
+.navbar-logo img, .logo img, .header-logo img {
+    mix-blend-mode: multiply !important;
+    background: transparent !important;
+    padding: 8px !important;
+}
+
+/* 4. أوسمة المنتجات (خصم / الأكثر طلباً) */
+.product-label, .badge, .sale-label {
+    background-color: #8b6c4b !important; /* بني ملكي */
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    padding: 4px 12px !important;
+}
+
+/* 5. أيقونة السناب شات (وضوح عالي) */
+.social-icons a[href*="snapchat"] i, .fa-snapchat {
+    background-color: #FFFC00 !important;
+    color: #000 !important;
+    border-radius: 50% !important;
+    width: 35px !important;
+    height: 35px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
