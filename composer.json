@@ -1,4 +1,5 @@
 {
+    "name": "twsaa/twig-theme",
     "require": {
         "twig/twig": "^3.0"
     },
